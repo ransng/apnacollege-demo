@@ -1,4 +1,4 @@
 # apnacollege-demo
 This is my repository with apnacollege
 <br>
-Author- Ranjeet (ApnaCollege)
+Author- Ranjeet (ApnaCollege apnacollege)
