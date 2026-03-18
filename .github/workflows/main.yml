@@ -12,3 +12,9 @@ jobs:
 
       - name: Run script
         run: echo "Hello GitHub Actions"
+        - name: List files
+          run: ls -la
+        
+        - name: Print date
+          run: date
+      
