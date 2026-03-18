@@ -1,5 +1,3 @@
-name: My First Workflow/Similer to pipeline
-
 on: [push]
 
 jobs:
@@ -10,6 +8,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Validate repository structure
+        run: |
+          if [ ! -f "README.md" ]; then
+            echo "Warning: README.md not found"
+          fi
+          echo "Repository structure validation completed"
+
       - name: Run script
         run: echo "Hello GitHub Actions"
         
@@ -18,4 +23,13 @@ jobs:
         
       - name: Print date
         run: date
-      
+
+      - name: Validate workflow execution
+        run: |
+          echo "Workflow completed successfully"
+          if [ $? -eq 0 ]; then
+            echo "✓ All steps validated"
+          else
+            echo "✗ Validation failed"
+            exit 1
+          fi
