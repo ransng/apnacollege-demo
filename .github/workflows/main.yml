@@ -1,3 +1,5 @@
+name: Basic Workflow
+
 on: [push]
 
 jobs:
@@ -8,19 +10,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-                  - name: Validate repository structure
+      - name: Validate repository structure
         run: |
           if [ ! -f "README.md" ]; then
             echo "Warning: README.md not found"
           fi
           echo "Repository structure validation completed"
 
-                - name: Run script
+      - name: Run script
         run: echo "Hello GitHub Actions"
-        
+
       - name: List files
-                run: ls -la
-        
+        run: ls -la
+
       - name: Print date
         run: date
 
